@@ -2,7 +2,7 @@ name: Charts_Dialy
 
 on: 
   schedule:
-    - cron: '20 17 * * *'
+    - cron: '24 22 * * *'
 jobs: 
   build:
     runs-on: ubuntu-latest
