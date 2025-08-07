@@ -3,6 +3,7 @@ name: Charts_Dialy
 on: 
   schedule:
     - cron: '24 22 * * *'
+  workflow_dispatch:
 jobs: 
   build:
     runs-on: ubuntu-latest
@@ -22,7 +23,7 @@ jobs:
           pip install -r requirements.txt
           playwright install --with-deps
       - name: run script
-        run: pyhton ./charts_dialy.py
+        run: python ./charts_dialy.py
 
       - name: guardar cambios en repo
         uses: stefanzweifel/git-auto-commit-action@v6
