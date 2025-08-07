@@ -46,5 +46,4 @@ with sync_playwright() as p:
         df.to_csv("oyentes_diarios.csv", index=False)
         print("Datos guardados en 'oyentes_diarios.csv'")
 
-    input("Presiona Enter para cerrar...")
     browser.close()  # Cerrar el navegador
