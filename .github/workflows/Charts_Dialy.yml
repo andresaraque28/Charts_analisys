@@ -1,0 +1,38 @@
+name: Charts_Dialy
+
+on: 
+  schedule:
+    - cron: '0 10 * * *'
+jobs: 
+  build:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps: 
+      - name: checkout a mi repo
+        uses: actions/checkout@v4
+      - name: Setup Python
+        uses: actions/setup-python@v5.6.0
+        with:
+          python-version: '3.12'
+      - name: Instalar dependencias
+        run: |
+          pip install -r requirements.txt
+          playwright install --with-deps
+      - name: run script
+        run: pyhton ./charts_dialy.py
+
+      - name: guardar cambios en repo
+        uses: stefanzweifel/git-auto-commit-action@v6
+        with:
+          commit_message: Actualizacion a CSV oyentes
+          
+        
+      
+      
+     
+    
+        
+    
