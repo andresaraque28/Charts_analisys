@@ -9,7 +9,7 @@ with sync_playwright() as p:
 
     url = "https://charts.youtube.com/artist/%2Fg%2F11fm400jbf" # URL del artista
     page.goto(url) 
-    page.wait_for_timeout(5000)
+    page.wait_for_timeout(15000)
     page.wait_for_selector('ytmc-views-card-v2')  # Esperar a que cargue el contenido
 
     # Extraer el número de oyentes diarios
